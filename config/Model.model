@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<ns3:modelConfig xsi:type="ns3:ModelConfig" folder="" pauseCalculations="false" entityCode="6" loadPath="old2" entityName="old2" version="13" name="old2" lastUpdated="2024-10-10T15:41:58.995+03:00" lastUpdatedBy="admin" id="admin:MODEL:old2" xmlns:ns6="http://www.modelshop.com/services/account/types" xmlns:ns5="http://www.modelshop.com/datacore/message/types" xmlns:ns8="http://www.modelshop.com/datacore/generator/types" xmlns:ns7="http://www.modelshop.com/datacore/repository/types" xmlns:ns2="http://www.modelshop.com/datacore/view/types" xmlns:ns4="http://www.modelshop.com/services/model/types" xmlns:ns3="http://www.modelshop.com/model/model/types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <datalists entityCode="7" entityName="collection" version="12" name="collection" created="2024-10-10T15:41:58.995+03:00" createdBy="admin" lastUpdated="2024-10-10T15:41:58.995+03:00" lastUpdatedBy="admin" id="collection">
+        <dataFields type="text" fieldCode="100" readOnly="true" rawType="java.lang.String" name="sourceName" description="Source name" initialized="true" id="sourceName">
+            <defaultValue source="'Manual Entry'"/>
+        </dataFields>
+        <dataFields type="integer" fieldCode="101" readOnly="true" rawType="java.lang.Long" name="lineNumber" description="Source line number" initialized="true" id="lineNumber">
+            <defaultValue source="id"/>
+        </dataFields>
+        <dataFields type="map" fieldCode="102" readOnly="true" rawType="com.modelshop.datacore.datatype.MapRecord" name="data" description="JSON content field" initialized="true" id="data"/>
+    </datalists>
+    <views allColumns="true" default="true" modelView="true" entityName="old2" name="old2" description="Default view for list old2" id="old2"/>
+    <views allColumns="true" default="true" entityName="collection" name="collection" description="Default view for list collection" id="collection"/>
+    <connectors layoutDetected="true" entityName="collection" version="12" name="collection" created="2024-10-10T15:41:58.995+03:00" createdBy="admin" lastUpdated="2024-10-10T15:41:58.995+03:00" lastUpdatedBy="admin" id="collection">
+        <connectorFields mapField="sourceName" type="text" readOnly="true" rawType="String" name="sourceName" description="Source name" id="sourceName"/>
+        <connectorFields mapField="lineNumber" type="integer" readOnly="true" rawType="Long" name="lineNumber" description="Source line number" id="lineNumber"/>
+        <connectorFields ignore="false" mapField="data" type="map" readOnly="true" rawType="LinkedHashMap" name="data" description="JSON content field" id="data"/>
+        <dataSource connectorUrl="collection.json">
+            <fileSource>
+                <dataSourceRefs>collection.json</dataSourceRefs>
+            </fileSource>
+            <loadFilter/>
+        </dataSource>
+        <mediaConfig autoDetect="true" connectorMediaType="json">
+            <jsonMedia jsonDataProperty="data"/>
+        </mediaConfig>
+    </connectors>
+    <extra name="ModelCanvasCoordinates" description="Coordinates for ModelCanvasCoordinates" id="ModelCanvasCoordinates">
+        <body>{"DATALIST:collection":{"x":-16,"y":59},"CONNECTOR:collection":{"x":-40,"y":156}}</body>
+    </extra>
+</ns3:modelConfig>
